@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/alexedwards/scs/v2"
-	"github.com/nuttchai/WebApp-Golang/pkg/config"
-	"github.com/nuttchai/WebApp-Golang/pkg/handlers"
-	"github.com/nuttchai/WebApp-Golang/pkg/render"
+	"github.com/nuttchai/go-booking-app/pkg/config"
+	"github.com/nuttchai/go-booking-app/pkg/handlers"
+	"github.com/nuttchai/go-booking-app/pkg/render"
 )
 
 // NOTE: It is convention that web folder is typically where Web Applications offten have their main function

@@ -3,9 +3,9 @@ package handlers
 import (
 	"net/http"
 
-	"github.com/nuttchai/WebApp-Golang/pkg/config"
-	"github.com/nuttchai/WebApp-Golang/pkg/models"
-	"github.com/nuttchai/WebApp-Golang/pkg/render"
+	"github.com/nuttchai/go-booking-app/pkg/config"
+	"github.com/nuttchai/go-booking-app/pkg/models"
+	"github.com/nuttchai/go-booking-app/pkg/render"
 )
 
 // IMPORTANT: if function start with CAP letter, it means that that function will be ACCESSIBLE outside the package

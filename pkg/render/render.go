@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"path/filepath"
 
-	"github.com/nuttchai/WebApp-Golang/pkg/config"
-	"github.com/nuttchai/WebApp-Golang/pkg/models"
+	"github.com/nuttchai/go-booking-app/pkg/config"
+	"github.com/nuttchai/go-booking-app/pkg/models"
 )
 
 // IMPORTANT: all the files for a package must exist in the same directory
