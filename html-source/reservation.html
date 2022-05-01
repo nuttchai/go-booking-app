@@ -171,6 +171,8 @@
     <script src="https://unpkg.com/notie"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
+      let attention = Prompt();
+
       (function () {
         "use strict";
         window.addEventListener(
@@ -202,6 +204,19 @@
         format: "yyyy-mm-dd",
       });
 
+      document
+        .getElementById("colorButton")
+        .addEventListener("click", function () {
+          // notify("This is my message", "warning");
+          // notifyModal(
+          //   "title",
+          //   "<em>hello world</em>",
+          //   "success",
+          //   "My Text for the Button"
+          // );
+          attention.success();
+        });
+
       function notify(msg, msgType) {
         notie.alert({ type: msgType, text: msg });
       }
@@ -215,17 +230,16 @@
         });
       }
 
-      document
-        .getElementById("colorButton")
-        .addEventListener("click", function () {
-          // notify("This is my message", "warning");
-          notifyModal(
-            "title",
-            "<em>hello world</em>",
-            "success",
-            "My Text for the Button"
-          );
-        });
+      function Prompt() {
+        let toast = function () {
+          console.log("clicked button and got toast");
+        };
+        let success = function () {
+          console.log("clicked button and got success");
+        };
+
+        return { toast, success };
+      }
     </script>
   </body>
 </html>
