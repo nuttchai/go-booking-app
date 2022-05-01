@@ -14,6 +14,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/css/datepicker-bs5.min.css"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/notie/dist/notie.min.css"
+    />
     <style>
       .my-footer {
         height: 5em;
@@ -22,6 +27,9 @@
         margin-top: 1.5em;
         padding: 1em;
         font-size: 80%;
+      }
+      .notie-container {
+        box-shadow: none;
       }
     </style>
     <title>Booking App</title>
@@ -131,6 +139,16 @@
           </form>
         </div>
       </div>
+      <div class="row">
+        <div class="col">
+          <p id="myParagraph">This is some text.</p>
+          <p>
+            <button id="colorButton" class="btn btn-outline-secondary">
+              Click me
+            </button>
+          </p>
+        </div>
+      </div>
     </div>
 
     <div class="row my-footer">
@@ -150,6 +168,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/js/datepicker-full.min.js"></script>
+    <script src="https://unpkg.com/notie"></script>
     <script>
       (function () {
         "use strict";
@@ -181,6 +200,16 @@
       const rangepicker = new DateRangePicker(elem, {
         format: "yyyy-mm-dd",
       });
+
+      function notify(msg, msgType) {
+        notie.alert({ type: msgType, text: msg });
+      }
+
+      document
+        .getElementById("colorButton")
+        .addEventListener("click", function () {
+          notify("This is my message", "warning");
+        });
     </script>
   </body>
 </html>
