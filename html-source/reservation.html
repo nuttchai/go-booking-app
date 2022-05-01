@@ -214,7 +214,9 @@
           //   "success",
           //   "My Text for the Button"
           // );
-          attention.success();
+          // attention.toast({ msg: "Hello, World", icon: "error" });
+          // attention.success({ msg: "Hello" });
+          attention.error({ msg: "Oops!" });
         });
 
       function notify(msg, msgType) {
@@ -231,14 +233,50 @@
       }
 
       function Prompt() {
-        let toast = function () {
-          console.log("clicked button and got toast");
-        };
-        let success = function () {
-          console.log("clicked button and got success");
+        let toast = function (c) {
+          const { icon = "success", msg = "", position = "top-end" } = c;
+
+          const Toast = Swal.mixin({
+            toast: true,
+            position: position,
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener("mouseenter", Swal.stopTimer);
+              toast.addEventListener("mouseleave", Swal.resumeTimer);
+            },
+          });
+
+          Toast.fire({
+            icon: icon,
+            title: msg,
+          });
         };
 
-        return { toast, success };
+        let success = function (c) {
+          const { title = "", msg = "", footer = "" } = c;
+
+          Swal.fire({
+            icon: "success",
+            title: title,
+            text: msg,
+            footer: footer,
+          });
+        };
+
+        let error = function (c) {
+          const { title = "", msg = "", footer = "" } = c;
+
+          Swal.fire({
+            icon: "error",
+            title: title,
+            text: msg,
+            footer: footer,
+          });
+        };
+
+        return { toast, success, error };
       }
     </script>
   </body>
